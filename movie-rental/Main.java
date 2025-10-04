@@ -16,5 +16,7 @@ public class Main {
         System.out.println(formatter.generateTextStatement(customer));
         //System.out.println("\n---HTML Version ---\n");
         //System.out.println(formatter.generateHtmlStatement(customer));
+        System.out.println("\n---XML Version---\n");
+        System.out.println(formatter.generateXmlStatement(customer));
     }
 }
