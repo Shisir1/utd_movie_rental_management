@@ -24,27 +24,39 @@ public class StatementFormatter {
         return result.toString();
     }
 
-//    // Example: extensible for other formats
-//    public String generateHtmlStatement(Customer customer) {
-//        double totalAmount = 0;
-//        int frequentRenterPoints = 0;
-//        StringBuilder result = new StringBuilder("<h1>Rental Record for " + customer.getName() + "</h1>\n<ul>");
-//
-//        for (Rental rental : customer.getRentals()) {
-//            double thisAmount = rental.getAmount();
-//            frequentRenterPoints += rental.getFrequentRenterPoints();
-//
-//            result.append("\n<li>").append(rental.getMovie().getTitle())
-//                    .append(" - ").append(thisAmount).append("</li>\n");
-//
-//            totalAmount += thisAmount;
-//        }
-//
-//        result.append("</ul>");
-//        result.append("\n<p>Amount owed is <b>").append(totalAmount).append("</b></p>");
-//        result.append("\n<p>You earned <b>").append(frequentRenterPoints).append("</b> frequent renter points</p>");
-//
-//        return result.toString();
-//    }
+    // Example: extensible for other formats
+    public String generateHtmlStatement(Customer customer) {
+        double totalAmount = 0;
+        int frequentRenterPoints = 0;
+        StringBuilder result = new StringBuilder("<h1>Rental Record for " + customer.getName() + "</h1>\n<ul>");
+
+        for (Rental rental : customer.getRentals()) {
+            double thisAmount = rental.getAmount();
+            frequentRenterPoints += rental.getFrequentRenterPoints();
+
+            result.append("\n<li>").append(rental.getMovie().getTitle())
+                    .append(" - ").append(thisAmount).append("</li>\n");
+
+            totalAmount += thisAmount;
+        }
+
+        result.append("</ul>");
+        result.append("\n<p>Amount owed is <b>").append(totalAmount).append("</b></p>");
+        result.append("\n<p>You earned <b>").append(frequentRenterPoints).append("</b> frequent renter points</p>");
+
+        return result.toString();
+    }
+
+    public String generateXmlStatement(Customer customer){
+        double totalAmount = 0;
+        int frequentRenterPoints = 0;
+        StringBuilder result = new StringBuilder();
+
+        result.append("<rentalStatement>\n");
+        result.append("     <customer>").append(customer.getName()).append("</customer\n");
+        result.append("     <>").append("").append("</>\n");
+
+        return result.toString();
+    }
 }
 
